@@ -30,14 +30,14 @@ st.title('YOLOv5 demo')
 #region Functions
 # --------------------------------------------
 
-@st.cache_resource
+@st.cache
 def get_yolo5(model_type='s'):
     return torch.hub.load('ultralytics/yolov5', 
                           'yolov5{}'.format(model_type), 
                           pretrained=True
                           )
 model = get_yolo5('s')
-@st.cache_resource
+@st.cache
 def get_preds(img : np.ndarray) -> np.ndarray:
    
     return model([img]).xyxy[0].numpy()
