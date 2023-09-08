@@ -144,7 +144,7 @@ def get_legend_color(class_name : int):
 #sidebar
 confidence = st.sidebar.slider('Kepercayaan', min_value=0.1, max_value=1.0, value=0.50)
 
-st.markdown("---")
+st.sidebar.markdown("---")
 
 # Pilihan objek yang ingin dideteksi
 st.sidebar.markdown("## Objek yang ingin dideteksi")
@@ -152,7 +152,7 @@ classes_selector = st.sidebar.multiselect('Pilih Objek',
                                         CLASSES, default='Kursi_kosong')
 all_labels_chbox = st.sidebar.checkbox('All classes', value=False)
 
-st.markdown("---")
+st.sidebar.markdown("---")
 
 prediction_mode = st.sidebar.selectbox(
     "",
