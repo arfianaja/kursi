@@ -18,8 +18,6 @@ from config import CLASSES, WEBRTC_CLIENT_SETTINGS
 
 confidence = 0.25
 
-
-#set_page_config должна вызываться до всех функций streamlit
 st.set_page_config(
     page_title="Kursi-Check",
 )
