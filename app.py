@@ -193,7 +193,7 @@ elif prediction_mode == 'Real-Time':
 
              # Ganti width dan height sesuai dengan resolusi yang lebih rendah yang Anda inginkan
             width = 320
-            height = 480
+            height = 320
             
             img = cv2.resize(img, (width, height))  # Ubah resolusi gambar
 
