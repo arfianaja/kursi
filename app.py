@@ -212,7 +212,6 @@ elif prediction_mode == 'Real-Time':
                 img = cv2.putText(img, label_text, (int(xmin), int(ymin) - 10),
                                 cv2.FONT_HERSHEY_SIMPLEX, 0.9, color, 2)
                 
-            img = cv2.flip(img, 1)  # Flip horizontal
             
             return cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 
