@@ -191,6 +191,12 @@ elif prediction_mode == 'Real-Time':
             img = frame.to_ndarray(format="bgr24")
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
+             # Ganti width dan height sesuai dengan resolusi yang lebih rendah yang Anda inginkan
+            width = 320
+            height = 480
+            
+            img = cv2.resize(img, (width, height))  # Ubah resolusi gambar
+
             result = self.get_preds(img)
             result = result[np.isin(result[:,-1], self.target_class_ids)]
             
