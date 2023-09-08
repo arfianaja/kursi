@@ -16,15 +16,16 @@ from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 
 from config import CLASSES, WEBRTC_CLIENT_SETTINGS
 
+confidence = 0.25
 
 
 #изменим название страницы, отображаемое на вкладке браузера
 #set_page_config должна вызываться до всех функций streamlit
 st.set_page_config(
-    page_title="YOLOv5 demo",
+    page_title="Kursi-Check",
 )
 
-st.title('YOLOv5 demo')
+st.title("Deteksi Kursi Kosong Dan Terisi")
 
 
 #region Functions
@@ -147,7 +148,7 @@ st.markdown("---")
 
 # Pilihan objek yang ingin dideteksi
 st.sidebar.markdown("## Objek yang ingin dideteksi")
-classes_selector = st.sidebar.multiselect('Select classes', 
+classes_selector = st.sidebar.multiselect('Pilih Objek', 
                                         CLASSES, default='Kursi_kosong')
 all_labels_chbox = st.sidebar.checkbox('All classes', value=False)
 
