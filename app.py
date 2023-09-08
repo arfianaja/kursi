@@ -19,7 +19,6 @@ from config import CLASSES, WEBRTC_CLIENT_SETTINGS
 confidence = 0.25
 
 
-#изменим название страницы, отображаемое на вкладке браузера
 #set_page_config должна вызываться до всех функций streamlit
 st.set_page_config(
     page_title="Kursi-Check",
@@ -32,12 +31,12 @@ st.title("Deteksi Kursi Kosong Dan Terisi")
 # --------------------------------------------
 
 @st.cache
-def get_yolo5(model_type='s'):
+def load_model(model_type='s'):
     return torch.hub.load('ultralytics/yolov5', 
                           'yolov5{}'.format(model_type), 
                           pretrained=True
                           )
-model = get_yolo5('s')
+model = load_model('s')
 @st.cache
 def get_preds(img : np.ndarray) -> np.ndarray:
    
@@ -167,7 +166,7 @@ prediction_mode = st.sidebar.selectbox(
 #target_class_ids 
 if classes_selector:
     target_class_ids = [CLASSES.index(class_name) for class_name in classes_selector]
-elif:
+else:
     target_class_ids = [0]
 
 rgb_colors = get_colors(target_class_ids)
