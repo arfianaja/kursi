@@ -150,14 +150,13 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("## Objek yang ingin dideteksi")
 classes_selector = st.sidebar.multiselect('Pilih Objek', 
                                         CLASSES, default='Kursi_kosong')
-all_labels_chbox = st.sidebar.checkbox('All classes', value=False)
 
 st.sidebar.markdown("---")
 
 prediction_mode = st.sidebar.selectbox(
     "",
-    ('Video', 'Web camera'),
-    index=0,
+    ('Video', 'Real-Time'),
+    index=1,
     format_func=lambda mode: mode)
 
 
@@ -166,11 +165,9 @@ prediction_mode = st.sidebar.selectbox(
 
 #target labels and their colors
 #target_class_ids 
-if all_labels_chbox:
-    target_class_ids = list(range(len(CLASSES)))
-elif classes_selector:
+if classes_selector:
     target_class_ids = [CLASSES.index(class_name) for class_name in classes_selector]
-else:
+elif:
     target_class_ids = [0]
 
 rgb_colors = get_colors(target_class_ids)
@@ -182,7 +179,7 @@ if prediction_mode == 'Video':
     if vid_bytes:
         process_video(vid_bytes, confidence)
     
-elif prediction_mode == 'Web camera':
+elif prediction_mode == 'Real-Time':
     class VideoTransformer(VideoTransformerBase):
         def __init__(self):
             self.model = model
