@@ -191,6 +191,13 @@ elif prediction_mode == 'Real-Time':
             img = frame.to_ndarray(format="bgr24")
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
+            # Hitung faktor skala
+            g = min(img.shape[1], img.shape[0]) / 224.0
+            
+            if size:
+                # Ubah resolusi gambar berdasarkan faktor skala
+                img = cv2.resize(img, None, fx=g, fy=g)
+
             result = self.get_preds(img)
             result = result[np.isin(result[:,-1], self.target_class_ids)]
             
