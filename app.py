@@ -20,6 +20,7 @@ confidence = 0.25
 
 st.set_page_config(
     page_title="Kursi-Check",
+    page_icon="assets/icon.png",
 )
 
 st.title("Deteksi Kursi Kosong Dan Terisi")
