@@ -23,6 +23,7 @@ st.set_page_config(
 )
 
 st.title("Deteksi Kursi Kosong Dan Terisi")
+st.markdown("---")
 
 
 #region Functions
