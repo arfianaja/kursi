@@ -59,7 +59,7 @@ def process_video(vid_bytes, confidence):
         st.markdown("## Kursi Terisi")
         st2_Kursi_Terisi_count = st.markdown("__")
         
-    st.sidebar.markdown("---")
+    st.markdown("---")
 
     output = st.empty()
     prev_time = 0
