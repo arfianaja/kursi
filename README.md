@@ -4,8 +4,9 @@ Aplikasi ini dibuat untuk mendeteksi kursi kosong dan terisi menggunakan dataset
 ## Tampilan Aplikasi
 
 ![Tampilan Aplikasi](assets/kursi.jpeg)
+---
 [Live demo](https://kursi-check.streamlit.app/)
-
+---
 ## Installasi
 
 ### Langkah Installasi
