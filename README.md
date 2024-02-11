@@ -3,7 +3,7 @@
 Aplikasi ini dibuat untuk mendeteksi kursi kosong dan terisi menggunakan dataset sendiri yaitu kursi mainan dan pengganti orang dengan kertas yang di gambar stickman. 
 ## Tampilan Aplikasi
 
-![Tampilan Aplikasi](static/bg.jpeg)
+![Tampilan Aplikasi](static/kursi.jpeg)
 [Live demo](https://kursi-check.streamlit.app/)
 
 ## Installasi
